@@ -27,9 +27,9 @@ public class StartPage extends AbstractPage {
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(String.valueOf(searchButton))));
     }
 
-    public MainPage getStartPage(){
+    public MainPage getStartPage(WebDriver driver){
         driver.get(url);
-        return new MainPage();
+        return new MainPage(driver);
     }
 
 
