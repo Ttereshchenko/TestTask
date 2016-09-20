@@ -7,6 +7,10 @@ import org.openqa.selenium.WebDriver;
  */
 public class GoogleChrome {
 
-    WebDriver webDriver;
+    public static final WebDriver webDriver= getDriver();
+
+    public static WebDriver getDriver(){
+        return (WebDriver) new GoogleChrome();
+    }
 
 }
