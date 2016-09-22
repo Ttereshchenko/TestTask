@@ -31,6 +31,7 @@ public class WebDriverHelper {
         waitNextAction(webDriver, timeOutSeconds);
         return webDriver.findElement(By.xpath(xpath));
     }
+
     public static WebElement findElementByID(final WebDriver webDriver, final String id, final long timeOutSeconds) {
         waitNextAction(webDriver, timeOutSeconds);
         return webDriver.findElement(By.id(id));

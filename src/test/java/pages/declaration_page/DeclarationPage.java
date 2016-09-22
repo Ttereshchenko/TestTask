@@ -11,27 +11,6 @@ import utils.WebDriverHelper;
  */
 public class DeclarationPage extends AbstractPage {
 
-
-/*
-    @FindBy(xpath = "//span[contains(text(),'Декларація про майновий стан')]")
-    public WebElement expectedText;
-    @FindBy(xpath = "//*[@id='HZY']")
-    public WebElement stepTwo;
-    @FindBy(xpath = "//*[@id='HZYP']")
-    public WebElement StepTwoUpDated;
-    @FindBy (xpath = "//*[@id='HNAME']")
-    WebElement stepThree;
-    @FindBy (xpath = "//*[@id='HTIN']")
-    WebElement stepThree2;
-    @FindBy (xpath = "//*[@id='HREG']")
-    WebElement stepFour1;
-    @FindBy (xpath = "//*[@id='HRAJ']")
-    WebElement stepFour2;
-    @FindBy (xpath = "")
-    WebElement
-
-*/
-
     @FindBy(xpath = "//span[contains(text(),'Декларація про майновий стан')]")
     public WebElement title;
 
