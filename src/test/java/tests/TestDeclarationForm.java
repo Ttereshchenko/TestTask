@@ -45,7 +45,6 @@ public class TestDeclarationForm extends UITestSetup {
         requiredTextFields.put(declarationForm.EMAIL_ID, "Moskov@mail.ru");
         requiredTextFields.put(declarationForm.NAME_SUPERVISORY_AUTHORITY_ID, "Unated Nationals");
         requiredTextFields.put(declarationForm.NAME_AND_LASTNAME_ID, "John Aister");
-
         requiredTextFields.put(declarationForm.DATA_OF_FILING,"22022016");
 
         LOG.info("Try to sent text values in the form");
