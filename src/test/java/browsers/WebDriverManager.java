@@ -9,7 +9,33 @@ import utils.ProjectProperties;
  * Created by doifu_000 on 9/21/16.
  */
 public class WebDriverManager {
-    public enum Browsers{
+    public static WebDriver getDriverInstance() {
+        WebDriver DRIVER = null;
+
+        switch (ProjectProperties.BROWSER) {
+            case FIREFOX: {
+                DRIVER = new FirefoxDriver();
+                break;
+            }
+            case CHROME: {
+                //Supports Chrome v52-54
+                // Example: src/test/resources/chromedriver_macOS
+                String chromeDriverPath = "src/test/resources/chromedriver_win32.exe";
+                System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+                DRIVER = new ChromeDriver();
+                break;
+            }
+            default: {
+                DRIVER = new FirefoxDriver();
+                break;
+            }
+        }
+
+        return DRIVER;
+    }
+
+
+    public enum Browsers {
         FIREFOX("firefox"),
         CHROME("chrome");
 
@@ -19,37 +45,18 @@ public class WebDriverManager {
             this.name = name;
         }
 
-        public String getName() {
-            return name;
-        }
-
-        public static Browsers getBrowser (String name) {
-            for( Browsers browser : Browsers.values()) {
-                if(browser.getName().equalsIgnoreCase(name))
+        public static Browsers getBrowser(String name) {
+            for (Browsers browser : Browsers.values()) {
+                if (browser.getName().equalsIgnoreCase(name))
                     return browser;
             }
             // Default browser if string input is incorrect
             return FIREFOX;
         }
-    }
 
-
-    public static WebDriver getDriverInstance(){
-        WebDriver DRIVER = null;
-
-        switch (ProjectProperties.BROWSER) {
-            case FIREFOX:
-                DRIVER = new FirefoxDriver();
-                break;
-            case CHROME:
-                DRIVER = new ChromeDriver();
-                break;
-            default:
-                DRIVER = new FirefoxDriver();
-                break;
+        public String getName() {
+            return name;
         }
-
-        return DRIVER;
     }
 
 }

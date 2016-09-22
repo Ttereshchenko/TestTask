@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import utils.UITestSetup;
-import utils.WebDriverHelper;
 
 /**
  * Created by doifu_000 on 9/21/16.

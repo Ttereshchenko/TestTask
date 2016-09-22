@@ -1,12 +1,10 @@
-package pages;
+package pages.declarationPage;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.AbstractPage;
+import utils.WebDriverHelper;
 
 /**
  * Created by doifu_000 on 20.09.2016.
@@ -34,9 +32,12 @@ public class DeclarationPage extends AbstractPage {
 
 */
 
+    @FindBy(xpath = "//span[contains(text(),'Декларація про майновий стан')]")
+    public WebElement title;
 
-
-
+    //
+    @FindBy(css = "iframe[id='templ:r1:0:iffarmeData::f']")
+    public WebElement iframe;
 
 
     public DeclarationPage(WebDriver driver) {
@@ -44,10 +45,16 @@ public class DeclarationPage extends AbstractPage {
     }
 
     public void waitForPage() {
-        init();
-        (new WebDriverWait(driver, 2))
-                .until(ExpectedConditions.textToBe(By.xpath(String.valueOf(expectedText)), "Декларація про майновий стан"));
-        Assert.assertEquals("Декларація про майновий стан", expectedText);
-    }//need to remake this method!
+        WebDriverHelper.waitNextAction(driver, PAGE_LOADING_TIMEOUT);
+        title.isDisplayed();
+    }
+
+    public DeclarationForm switchToForm() {
+        WebDriverHelper.waitNextAction(driver, ELEMENT_APPEAR_TIMEOUT);
+        driver = driver.switchTo().frame(iframe);
+        DeclarationForm declarationForm = new DeclarationForm(driver);
+        declarationForm.waitForPage();
+        return declarationForm;
+    }
 
 }
