@@ -13,7 +13,6 @@ public class ProjectProperties {
     public static final String PROPERTIES_FILENAME = "project.properties";
     public static final Properties properties = loadProperties(PROPERTIES_FILENAME);
     public static final WebDriverManager.Browsers BROWSER = WebDriverManager.Browsers.getBrowser(properties.getProperty("BROWSER"));
-    public static final String TARAS = properties.getProperty("TARAS");
 
 
     public static Properties loadProperties(String file) {
