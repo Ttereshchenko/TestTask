@@ -1,4 +1,4 @@
-package pages.declarationPage;
+package pages.declaration_page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

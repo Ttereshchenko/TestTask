@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.declarationPage.DeclarationPage;
+import pages.declaration_page.DeclarationPage;
 import utils.WebDriverHelper;
 
 /**
