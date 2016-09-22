@@ -70,6 +70,7 @@ public class DeclarationForm extends AbstractPage {
         WebDriverHelper.waitForElementVisibility(driver, title, AbstractPage.PAGE_LOADING_TIMEOUT);
     }
 
+    @SuppressWarnings("Since15")
     public void populateValue(String id, String value) {
         InputType type = getInputType(id);
         WebElement element = WebDriverHelper.findElementByID(driver, idInputPrefix + id, AbstractPage.ELEMENT_APPEAR_TIMEOUT);
