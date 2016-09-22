@@ -18,6 +18,7 @@ public class DeclarationForm extends AbstractPage {
 
 
 
+
     String xpathPattern = "//*[@id='%s']";
     String idInputPrefix = "0_";
 
