@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ExampleTaskSuite">
+
+    <test name="Main and Declaration pages tests">
+        <packages>
+            <package name="tests.*" />
+        </packages>
+    </test>
+</suite>
